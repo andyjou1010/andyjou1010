@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/andyjou1010/static/css/main.6c000951.css",
+    "main.js": "/andyjou1010/static/js/main.eb6216c1.js",
+    "static/js/787.5809834d.chunk.js": "/andyjou1010/static/js/787.5809834d.chunk.js",
+    "index.html": "/andyjou1010/index.html",
+    "main.6c000951.css.map": "/andyjou1010/static/css/main.6c000951.css.map",
+    "main.eb6216c1.js.map": "/andyjou1010/static/js/main.eb6216c1.js.map",
+    "787.5809834d.chunk.js.map": "/andyjou1010/static/js/787.5809834d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6c000951.css",
+    "static/js/main.eb6216c1.js"
+  ]
+}
