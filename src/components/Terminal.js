@@ -1,10 +1,14 @@
 // Terminal.js
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './style/Terminal.css';
 
 function Terminal({routes}) {
     const [commands, setCommands] = useState([]);
+    const [locationStack, setLocationStack] = useState(['/']);  // Initialize with home route.
+    const navigate = useNavigate();
+    const endOfTerminalRef = useRef(null);
 
     const handleCommand = (command) => {
         let output = "";
@@ -17,8 +21,28 @@ function Terminal({routes}) {
         switch (mainCommand) {
             case 'cd':
                 if(args[0]) {
-                    output = `Navigating to ${args[0]}...`;
-                    // Logic to navigate or show info based on args[0]
+                    if (args[0] === "home") {
+                        output = `Navigating to home...`;
+                        setLocationStack(prevStack => [...prevStack, '/']); // Push home route to stack
+                        navigate(`/`);
+                    } else if (args[0] === "..") {
+                        // Go back to previous location
+                        if (locationStack.length > 1) {
+                            const prevLocation = locationStack[locationStack.length - 2]; // Get second last item
+                            setLocationStack(prevStack => prevStack.slice(0, -1)); // Remove last item
+                            output = `Navigating back to ${prevLocation === '/' ? 'home' : prevLocation}...`;
+                            navigate(prevLocation);
+                        } else {
+                            output = "You're already at the root directory.";
+                        }
+                    } else if (routes.some(route => route.path.substring(1) === args[0])) {  
+                        // Checking if the route exists
+                        output = `Navigating to ${args[0]}...`;
+                        setLocationStack(prevStack => [...prevStack, `/${args[0]}`]); // Push new route to stack
+                        navigate(`/${args[0]}`);
+                    } else {
+                        output = `No such location: ${args[0]}`;
+                    }
                 } else {
                     output = "Please specify a destination.";
                 }
@@ -56,6 +80,12 @@ function Terminal({routes}) {
     
         setCommands(prevCommands => [...prevCommands, { input: command, output }]);
     };
+
+    useEffect(() => {
+        if (endOfTerminalRef.current) {
+            endOfTerminalRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [commands]);
     
     
 
@@ -67,6 +97,7 @@ function Terminal({routes}) {
                     <div className="command-output">{cmd.output}</div>
                 </div>
             ))}
+            <div ref={endOfTerminalRef}></div> {/* This will be our marker for the end */}
             <CommandInput onEnter={handleCommand} />
         </div>
     );

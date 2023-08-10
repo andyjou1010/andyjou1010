@@ -1,15 +1,20 @@
 .terminal {
-    width: 80%;
-    max-width: 800px;
-    margin: 50px auto;
+    width: 95%;
+    max-height: 20%; /* Adjust this value as per your requirement */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #000;
     color: #0f0;
     padding: 20px;
     font-family: 'Courier New', monospace;
+    overflow: auto;
 }
 
 .command-input, .command-output {
     margin-bottom: 10px;
+    font-family: 'Courier New', monospace;
 }
 
 .command-input input {
@@ -17,4 +22,13 @@
     border: none;
     color: #0f0;
     outline: none;
+    font-family: 'Courier New', monospace;
+
+}
+
+.terminal-drag-handle {
+    cursor: ns-resize;
+    height: 10px;
+    background-color: #555;
+    border-top: 2px solid #777;
 }
