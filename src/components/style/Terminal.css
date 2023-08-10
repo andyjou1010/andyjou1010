@@ -1,0 +1,20 @@
+.terminal {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #000;
+    color: #0f0;
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+}
+
+.command-input, .command-output {
+    margin-bottom: 10px;
+}
+
+.command-input input {
+    background-color: #000;
+    border: none;
+    color: #0f0;
+    outline: none;
+}
