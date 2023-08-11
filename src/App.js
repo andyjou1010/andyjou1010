@@ -17,7 +17,7 @@ const routes = [
 
 function App() {
   return (
-    <Router>
+    <Router basename='/andyjou1010'>
       <div className="App">
         <Navbar />
         <Terminal routes={routes} />

@@ -1,6 +1,4 @@
-// Terminal.js
-
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './style/Terminal.css';
 
@@ -119,7 +117,7 @@ function CommandInput({ onEnter }) {
                 type="text" 
                 value={input} 
                 onChange={e => setInput(e.target.value)} 
-                onKeyPress={handleKeyPress}
+                onKeyDown={handleKeyPress}
             />
         </div>
     );
