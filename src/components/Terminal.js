@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './style/Terminal.css';
 
@@ -33,7 +33,7 @@ function Terminal({routes}) {
                         } else {
                             output = "You're already at the root directory.";
                         }
-                    } else if (routes.some(route => route.path.substring(1) === args[0])) {  
+                    } else if (routes.some(route => route.path.substring(1) === args[0])) {
                         // Checking if the route exists
                         output = `Navigating to ${args[0]}...`;
                         setLocationStack(prevStack => [...prevStack, `/${args[0]}`]); // Push new route to stack
@@ -53,7 +53,7 @@ function Terminal({routes}) {
             case 'clear':
                 // For clear, you might want to set the commands state to an empty array
                 setCommands([]);
-                return; 
+                return;
             
             case 'uptime':
                 output = "Website uptime: Always awake!"; // This is a fictional response. You can make this dynamic if you want.

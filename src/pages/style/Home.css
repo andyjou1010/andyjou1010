@@ -1,0 +1,44 @@
+
+.home {
+    background-color: #444;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    text-align: left;
+  }
+  
+  .home h2 {
+    color: #B2D8B8;
+  }
+  
+  .home p, .home li {
+    line-height: 1.6;
+  }
+  
+  .home code {
+    background-color: #C0C0C0;
+    color: #282c34;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  
+  .home ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .home li::before {
+    content: '$';
+    margin-right: 5px;
+    color: #B2D8B8;
+  }
+  
+  /* Enhance specific elements inside the home for better visual hierarchy */
+  .home span {
+    color: #a9a9a9; /* Lighter text for descriptions */
+  }
+  
