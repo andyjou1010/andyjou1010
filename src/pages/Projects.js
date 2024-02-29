@@ -3,8 +3,8 @@ import React from 'react';
 import './style/Projects.css';
 
 const projectData = [
-    { id: 1, name: "Festivie", description: "All in one festival app", imageUrl: "../images/Festivie.png" },
-    { id: 2, name: "Snake Fight", description: "Snake Fight 2 players", imageUrl: "../images/SnakeFight.png" },
+    { id: 1, name: "Festivie", description: "All in one festival app", imageUrl: `${process.env.PUBLIC_URL}/images/festivie.png` },
+    { id: 2, name: "Snake Fight", description: "Snake Fight 2 players", imageUrl: `${process.env.PUBLIC_URL}/images/snakefight.png` },
     { id: 3, name: "Digiprof", description: "A virtual prof who is always there", imageUrl: "path/to/image3.jpg" },
     { id: 4, name: "LessonSphere", description: "Student managing and communication tool for teachers", imageUrl: "path/to/image4.jpg" },
     { id: 5, name: "Project 5", description: "Description for Project 5", imageUrl: "path/to/image5.jpg" },

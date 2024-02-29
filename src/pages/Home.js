@@ -4,7 +4,7 @@ import './style/Home.css';
 
 function Home() {
   return (
-    <div class="home">
+    <div className="home">
     <h2>Why a Terminal:</h2>
     <p>
       I thought I'd try something new and interesting. Since I use command line so much to the point I completely forgo Finder on Mac, I thought maybe developers who visit my site would find it a warm welcome to a familiar navigation system.
@@ -18,7 +18,6 @@ function Home() {
       <li><code>whoami</code>: <span>Displays the current user identity, which defaults to "Guest" for all users.</span></li>
       <li><code>date</code>: <span>Shows the current date and time, formatted according to your locale settings.</span></li>
       <li><code>echo [text]</code>: <span>Repeats back the text entered after the command, useful for displaying messages in the terminal.</span></li>
-
     </ul>
   </div>
   );
